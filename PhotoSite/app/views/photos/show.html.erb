@@ -1,0 +1,48 @@
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+
+<h1>Photosite details</h1>
+<h2><%= @photo_all.first.user.first_name %> <%= @photo_all.first.user.last_name %> <%= @photo_all.count %> photos</h2>
+<table>
+  <tr>
+    <th bgcolor="#87cefa">Photo ID</th>
+    <th bgcolor="#87cefa">Photos posted</th>
+    <th bgcolor="#87cefa">Created</th>
+    <th bgcolor="#87cefa">Comments</th>
+  </tr>
+  <% @photo_all.each do |photo_all| %>
+      <tr>
+        <td><%= photo_all.id %> </td>
+        <td><%= image_tag(photo_all.file_name, size: 15*15) %></td>
+        <td><%= photo_all.created_at %></td>
+        <td>
+          <table>
+            <col width="50">
+            <col width="250">
+            <col width="50">
+            <tr>
+              <% @comments=@comment_all.where(:photo_id =>photo_all.id) %>
+              <th bgcolor="#e6e6fa">User</th>
+              <th bgcolor="#e6e6fa"> Comments</th>
+              <th bgcolor="#e6e6fa"> commented at</th>
+            </tr>
+            <% if @comments.count !=0%>
+            <% @comments.each do |comment| %>
+                 <tr>
+                  <td bgcolor="#dcdcdc"><%= link_to comment.user.first_name, controller: 'photos', action: :show, id: comment.user.id %></td>
+                  <td bgcolor="#dcdcdc"><%= comment.comment_text %></td>
+                  <td bgcolor="#dcdcdc"><%= comment.created_at %></td>
+                 </tr>
+            <% end %>
+                <% else %>
+                <tr>
+            <td colspan="3" bgcolor="dcdcdc" align="center">No Comments</td></tr>
+            <% end %>
+          </table>
+        </td>
+  </tr>
+  <% end %>
+</table>

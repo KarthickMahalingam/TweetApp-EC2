@@ -1,0 +1,27 @@
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+
+<h1>Photosite Users</h1>
+<h1>There are <%= @count_user %> Users</h1>
+<table>
+  <tr>
+    <th bgcolor="#e6e6fa">User ID</th>
+    <th bgcolor="#e6e6fa">First Name</th>
+    <th bgcolor="#e6e6fa">Last Name</th>
+    <th bgcolor="#e6e6fa">Created</th>
+    <th bgcolor="#e6e6fa">Updated</th>
+  </tr>
+
+  <% @user_all.each do |user_all| %>
+      <tr>
+        <td><%= link_to user_all.id, controller: "photos", action: 'show', id: user_all.id  %></td>
+        <td><%= user_all.first_name %></td>
+        <td><%= user_all.last_name %></td>
+        <td><%= user_all.created_at %></td>
+        <td><%= user_all.updated_at %></td>
+      </tr>
+  <% end %>
+</table>

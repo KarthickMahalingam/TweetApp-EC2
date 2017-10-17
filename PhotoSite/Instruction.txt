@@ -1,0 +1,6 @@
+1) add the below line in gemfile
+gem 'coffee-script-source', '1.8.0'
+2) in terminal execute bundle update coffee-script-source
+3) rake assets:precompile
+
+https://tecadmin.net/install-ruby-on-rails-on-ubuntu/

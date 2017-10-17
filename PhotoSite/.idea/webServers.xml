@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9ae5d1d1-7a02-4a27-93d2-e34429cfdd8b" name="EC2" url="http://54.200.15.165">
+        <fileTransfer explicitFtps="false" host="54.200.15.165" port="22" privateKey="D:\my documents\E Books\CSUEB Books\Spring 2017 - Quarter 3\Software Eng on Web-based systems CS6320\Assignment\Project R2\Screenshots\PhotoSite.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="548d3a9a-ae61-4a87-8f98-c626c2161c42" name="PhotoSite EC2 Demo" url="http://54.191.132.83">
+        <fileTransfer host="54.191.132.83" port="22" privateKey="D:\my documents\E Books\CSUEB Books\Spring 2017 - Quarter 3\Software Eng on Web-based systems CS6320\Assignment\Project R2\Key\Photosite_key.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
